@@ -27,7 +27,6 @@ def tipi_test(request):
         for i in mydata:
             mydata = i
             mydata = eval(mydata)
-        # mydata = convert(mydata)
         name1 = mydata.get('name')
         a1 = mydata.get('q1')
         a2 = mydata.get('q2')
@@ -39,21 +38,9 @@ def tipi_test(request):
         a8 = mydata.get('q8')
         a9 = mydata.get('q9')
         a10 = mydata.get('q10')
-
         Answers.objects.create(name=name1, q1=a1, q2=a2, q3=a3, q4=a4,q5=a5, q6=a6, q7=a7,
                                q8=a8,q9=a9,q10=a10)
 
-        #logging.debug(name)
-       #logging.debug(a1)
-        #logging.debug(a2)
-        #logging.debug(a3)
-        #logging.debug(a4)
-        #logging.debug(a5)
-        #logging.debug(a6)
-        #logging.debug(a7)
-        #logging.debug(a8)
-        #logging.debug(a9)
-        #logging.debug(a10)
         return render(request, 'bigfive/tipi_test.html',{})
     else:
         return render(request, 'bigfive/tipi_test.html', {})

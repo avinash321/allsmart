@@ -85,10 +85,17 @@ function saveAnswers(){
 
 	  success: function() {
 	    alert('Your data is saved , Thank you!');
+	    clearForm();
 	  },
 	  error: function() {
 	    alert('Error occured while saving your Data');
 	  }
 	});
+}
+
+function clearForm()
+{
+    $("#name").val("");
+    $('input:radio').prop('checked',false);
 }
 
